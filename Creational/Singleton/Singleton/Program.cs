@@ -9,6 +9,10 @@ namespace Singleton
             // Lazy Initialization Singleton Design Pattern
             LazyInitializationSingleton lazyInitializationSingleton = LazyInitializationSingleton.GetInstance();
             lazyInitializationSingleton.TestInstance();
+
+            // Eager Initialization Singleton Design Pattern
+            EagerInitializationSingleton eagerInitializationSingleton = EagerInitializationSingleton.GetInstance();
+            eagerInitializationSingleton.TestInstance();
         }
     }
 }
