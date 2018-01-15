@@ -2,27 +2,37 @@
 
 namespace Singleton.DesignPatterns
 {
-    class LazyInitializationSingleton
+    class ThreadSafeSingleton
     {
         ///<summary>
         /// Private static instance of the same class.
         ///</summary>
-        private static LazyInitializationSingleton instance;
+        private static ThreadSafeSingleton instance;
+
+        ///<summary>
+        /// Object to lock the GetInstance method to ensure Thread Safety.
+        ///</summary>
+        private static readonly object padlock = new object();
 
         ///<summary>
         /// Private constructor.
         ///</summary>
-        private LazyInitializationSingleton() { }
+        private ThreadSafeSingleton() { }
 
         ///<summary>
         /// Public static method to return an instance of the class.
-        /// If the instance is null at first, then initializes it.
         ///</summary>
-        public static LazyInitializationSingleton GetInstance()
+        public static ThreadSafeSingleton GetInstance()
         {
             if (instance == null)
             {
-                instance = new LazyInitializationSingleton();
+                lock (padlock)
+                {
+                    if(instance == null)
+                    {
+                        instance = new ThreadSafeSingleton();
+                    }
+                }
             }
 
             return instance;

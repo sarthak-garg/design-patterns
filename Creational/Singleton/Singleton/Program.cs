@@ -13,6 +13,10 @@ namespace Singleton
             // Eager Initialization Singleton Design Pattern
             EagerInitializationSingleton eagerInitializationSingleton = EagerInitializationSingleton.GetInstance();
             eagerInitializationSingleton.TestInstance();
+
+            // Thread Safe Singleton Design Pattern
+            ThreadSafeSingleton threadSafeSingleton = ThreadSafeSingleton.GetInstance();
+            threadSafeSingleton.TestInstance();
         }
     }
 }

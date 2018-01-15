@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="DesignPatterns\LazyInitializationSingleton.cs" />
     <Compile Include="DesignPatterns\EagerInitializationSingleton.cs" />
+    <Compile Include="DesignPatterns\ThreadSafeSingleton.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
